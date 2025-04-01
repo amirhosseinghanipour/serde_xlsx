@@ -1,0 +1,25 @@
+[package]
+name = "serde_xlsx"
+version = "0.1.0"
+edition = "2024"
+authors = ["Amirhossein Ghanipour d3v1ll3n@gmail.com"]
+description = "A Serde integration for serializing/deserializing Rust structs to/from Excel files (.xls/.xlsx)"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/amirhosseinghanipour/serde_xlsx"
+readme = "README.md"
+keywords = ["serde", "excel", "xlsx", "serde_xlsx", "ooxml"]
+categories = ["encoding", "parser-implementations"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+rust_xlsxwriter = { version = "0.74", features = ["serde"] }
+calamine = "0.23.1"
+zip = "2.0"
+quick-xml = "0.36"
+image = { version = "0.25", optional = true }
+
+[features]
+image_support = ["image"]
+
+[dev-dependencies]
+serde_json = "1.0"
